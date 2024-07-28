@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="введіть день тижня" type="text" id="text_one">
+    <button onclick="checks()">sub</button>
+    <br><br>
+
+    <input placeholder="введіть число " type="number" id="number_one">
+    <button onclick="checkNum()">sub</button>
+    <br><br>
+
+    <input placeholder="введіть один з кольорів світлофора" type="text" id="textTwo">
+    <button onclick="checkTextTwo()">sub</button>
+    <br><br>
+
+
+
+
+
+    <label>
+        <input id="value_1" type="number">
+
+        <select name="select" id="select">
+            <option value="-">-</option>
+            <option value="+">+</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>
+
+        <input id="value_2" type="number">
+
+    </label>
+    <button onclick="calculate()">вирахувати</button>
+    
+    <script type="module">
+        import { checks } from './script.js';
+
+        window.checks = checks;
+    </script>
+
+    <script type="module">
+        import { checkNum } from './script.js';
+
+        window.checkNum = checkNum;
+    </script>
+
+    <script type="module">
+        import { checkTextTwo } from './script.js';
+
+        window.checkTextTwo = checkTextTwo;
+    </script>
+
+    <script type="module">
+        import { calculate } from './script.js';
+
+        window.calculate = calculate;
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
