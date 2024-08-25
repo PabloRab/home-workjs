@@ -45,7 +45,14 @@ console.log(
 
  
 const findLongestWord = function (string) { 
-  
+   words = string.split(' ');
+   longest = words[0];
+   for(let i = 0;  i < words.length; i++){
+    if(words[i].length > longest.length) {
+      longest = words [i];
+    }
+   }
+   return longest;
 }; 
  
 /*Виклич функції для перевірки працездатності твоєї реалізації.*/ 
@@ -60,7 +67,11 @@ console.log(findLongestWord('May the force be with you')); // 'force'
 // Якщо довжина більше 40 символів, то функція обрізає рядок до 40-ка символів і додає в кінець рядка три крапки '...', після чого повертає   укорочену версію. 
 
 const formatString = function (string) { 
-  // твій код 
+  if(string.length <= 40) {
+    return string;
+  } else {
+    return string.slice(0, 40) + '...';
+  }
 }; 
  
 /* 
@@ -90,7 +101,11 @@ console.log(
  
 
 const checkForSpam = function (message) { 
-  // твій код 
+  const lowerMassage = message.toLowerCase();
+  if(lowerMassage.includes('spam') || lowerMassage.includes('sale')) {
+    return true;
+  }
+  return false;
 }; 
  
 /* 
