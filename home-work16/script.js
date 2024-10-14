@@ -53,3 +53,71 @@
 //    });
    
 //    poly.getInfo(); // User Poly is 3 years old and has 17 followers
+
+//task 3
+class Storage{
+    constructor(items) {
+        this.items = items
+    }
+    getItems() {
+        return this.items;
+    }
+    addItem(item) {
+        return this.items.push(item);
+    }
+    removeItem(item) {
+        const itemIndex = this.items.indexOf(item);
+        if (itemIndex !== -1) {
+            this.items.splice(itemIndex, 1);
+        }
+    }
+}
+
+
+const storage = new Storage([
+    'Нанітоіди',
+    'Пролонгер',
+    'Залізні жупи',
+    'Антигравітатор',
+   ]);
+   
+   const items = storage.getItems();
+   console.table(items); // [ "Нанітоіди", "Пролонгер", "Залізні жупи", "Антигравітатор" ]
+   
+   storage.addItem('Дроїд');
+   console.table(storage.items); // [ "Нанітоіди", "Пролонгер", "Залізні жупи", "Антигравітатор", "Дроїд" ]
+   
+   storage.removeItem('Пролонгер');
+   console.table(storage.items); // [ "Нанітоіди", "Залізні жупи", "Антигравітатор", "Дроїд" ]
+
+
+   //Task 4
+   class StringBuilder{
+    constructor(str) {
+        this._value = str;
+    }
+    get value() {
+        return this._value;
+    }
+    append(str) {
+        this._value += str;
+    }
+    prepend(str) {
+        this._value = str + this._value;
+    }
+    pad(str) {
+        this._value = str + this._value + str;
+    }
+   }
+
+
+   const builder = new StringBuilder('.');
+
+builder.append('^');
+console.log(builder.value); // '.^'
+
+builder.prepend('^');
+console.log(builder.value); // '^.^'
+
+builder.pad('=');
+console.log(builder.value); // '=^.^='
